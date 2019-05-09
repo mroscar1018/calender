@@ -53,10 +53,10 @@ function submitPostIt(){ //按了PostIt按鍵後，所要執行的方法
       }
       if(newCurrentPostIt){ //如果是新記事的話
           postIts.push(postIt); //將新記事postIT物件推入postIts陣列
-          ajax({new_note_uid: postIt.id, new_note_color: postIt.note_num, new_note_text: postIt.note}); //index-9-2.php
+          ajax({new_note_uid: postIt.id, new_note_color: postIt.note_num, new_note_text: postIt.note}); 
       } else {
           postIts[currentPostItIndex].note = postIt.note; //更新現有記事物件的記事資料
-          ajax({update_note_uid: postIts[currentPostItIndex].id, update_note_text: postIt.note}); //index-9-2.php
+          ajax({update_note_uid: postIts[currentPostItIndex].id, update_note_text: postIt.note}); 
       }
 
     console.log(postIts)
@@ -71,7 +71,7 @@ function deleteNote(){
         indexToDel =currentPostItIndex;
     }
     if(indexToDel != undefined){
-      ajax({delete_note_uid: postIts[indexToDel].id}); //index-9-2.php
+      ajax({delete_note_uid: postIts[indexToDel].id}); 
       postIts.splice(indexToDel, 1);
     }
     fillInMonth(); //這個方法可以改成fillInCalendar比較貼切，之後，我們再來統一大改 (refactoring)
