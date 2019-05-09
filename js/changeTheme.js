@@ -75,7 +75,7 @@ function openFavColor(){
 }
 
 function changeColor(){
-  ajax({color: currentColor.name}); //index-9-1.php
+  ajax({color: currentColor.name}); 
   reDrawColor();
 }
 
@@ -108,9 +108,9 @@ function reDrawColor(){
     elements[i].style.color = currentColor.off_color;
   }
 
-  // ajax({color: currentColor.color}); //index-9-1.php
+  // ajax({color: currentColor.color}); 
   function changeColor(){
-  ajax({color: currentColor.name}); //index-9-1.php
+  ajax({color: currentColor.name}); 
   reDrawColor();
 }
 
