@@ -89,10 +89,10 @@ function fillInMonth(){
 var uid; //index-8-1
 for (let i = 0; i < monthDays[calendarData.calendar.month]; i++){
   days[weekDay + i].innerHTML = (i+1);
-  uid = getUID(calendarData.calendar.month, calendarData.calendar.year, i+1); //index-8-1
-  days[weekDay + i].setAttribute("data-uid", uid); //index-8-1
+  uid = getUID(calendarData.calendar.month, calendarData.calendar.year, i+1); 
+  days[weekDay + i].setAttribute("data-uid", uid); 
   // days[weekDay + i].style.backgroundColor = "GoldenRod ";
-  appendSpriteToCellAndTooltip(uid, days[weekDay + i]); //index-8-3
+  appendSpriteToCellAndTooltip(uid, days[weekDay + i]); 
 }
 //上個月段
 if (weekDay > 0)  days[weekDay-1].classList.add("prev-month-last-day"); //框線的處理，上個月的最後1天
@@ -101,17 +101,17 @@ if (preMonth == 0) preMonth = 12;
 for (let i = (weekDay-1), day = monthDays[preMonth]; i >=0; i--, day--){
   days[i].innerHTML = day;
   days[i].classList.add("color");
-  uid = getUID(calendarData.calendar.month-1, calendarData.calendar.year, day); //index-8-1
-  days[i].setAttribute("data-uid", uid); //index-8-1
-  appendSpriteToCellAndTooltip(uid, days[i]); //index-8-3
+  uid = getUID(calendarData.calendar.month-1, calendarData.calendar.year, day); 
+  days[i].setAttribute("data-uid", uid); 
+  appendSpriteToCellAndTooltip(uid, days[i]); 
 }
 //下個月段
 for (let i = (weekDay+monthDays[calendarData.calendar.month]), day = 1; i <days.length; i++, day++){
   days[i].innerHTML = day;
   days[i].classList.add("color");
-  uid = getUID(calendarData.calendar.month+1, calendarData.calendar.year, day); //index-8-1
-  days[i].setAttribute("data-uid", uid); //index-8-1
-  appendSpriteToCellAndTooltip(uid, days[i]); //index-8-3
+  uid = getUID(calendarData.calendar.month+1, calendarData.calendar.year, day); 
+  days[i].setAttribute("data-uid", uid); 
+  appendSpriteToCellAndTooltip(uid, days[i]); 
 }
 
 //處理今日元素表格的顯著背景設定
